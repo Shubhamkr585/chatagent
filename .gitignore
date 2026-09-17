@@ -1,0 +1,25 @@
+# Local environment and secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Dependency and build output
+node_modules/
+dist/
+build/
+out/
+coverage/
+.vitest/
+__pycache__/
+*.pyc
+.venv/
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.log
