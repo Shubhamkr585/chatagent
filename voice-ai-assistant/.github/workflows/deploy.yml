@@ -1,0 +1,24 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build orchestrator image
+        run: docker build -t voice-ai-orchestrator ./orchestrator
+
+      - name: Build ai-service image
+        run: docker build -t voice-ai-python ./ai-service
+
+      - name: Deploy to target host
+        run: |
+          echo "Add your Render / Railway / Fly.io deployment commands here."
+          echo "Example: docker push <registry>/voice-ai-orchestrator && curl -X POST ${{ secrets.DEPLOY_WEBHOOK_URL }}"
